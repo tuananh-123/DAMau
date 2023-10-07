@@ -8,4 +8,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAMau_BLL\DAMau_BLL.csproj" />
+    <ProjectReference Include="..\DAMau_DAL\DAMau_DAL.csproj" />
+  </ItemGroup>
+
 </Project>

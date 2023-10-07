@@ -52,3 +52,19 @@ BEGIN
     FROM NhanViens nv
     INNER JOIN inserted i ON nv.ID = i.ID;
 END;
+go
+
+alter procedure Login @email varchar(50), @password nvarchar(50)
+as 
+begin
+	declare @status int
+	declare @trangThai tinyint
+	select @trangThai = nv.TrangThai from NhanViens nv where nv.Email = @email and nv.MatKhau = @password
+	if (@trangThai = 1)
+		set @status = 1;
+	else
+		set	@status = 0;
+select @status;
+end
+go
+
